@@ -1,0 +1,81 @@
+package br.com.contmatic.prova.endereco;
+
+public enum DDD {
+	SãoPaulo_SP(11),
+	SãoJoseDosCampos_SP(12),
+	Santos_SP(13),
+	Bauru_SP(14),
+	Sorocaba_SP(15),
+	RibeirãoPreto_SP(16),
+	SãoJoseDoRioPreto_SP(17),
+	PresidentePrudente_SP(18),
+	Campinas_SP(19),
+	RioDeJaneiro_RJ(21),
+	CamposDosGoytacazes_RJ(22),
+	VoltaRedonda_RJ(24),
+	Vitória_ES(27),
+	CachoeiroDeItapemirim_ES(28),
+	BeloHorizonte_MG(31),
+	JuizDeFora_MG(32),
+	GovernadorValadares_MG(33),
+	Uberlândia_MG(34),
+	PoçosDeCaldas_MG(35),
+	Divinópolis_MG(37),
+	MontesClaros_MG(38),
+	Curitiba_PR(41),
+	Ponta_Grossa_PR(42),
+	Londrina_PR(43),
+	Maringá_PR(44),
+	FozDoIguacu_PR(45),
+	PatoBranco_PR(46),
+	Joinville_SC(47),
+	Florianópolis_SC(48),
+	Chapecó_SC(49),
+	PortoAlegre_RS(51),
+	Pelotas_RS(53),
+	CaxiasDoSul_RS(54),
+	SantaMaria_RS(55),
+	Brasília_DF(61),
+	Goiania_GO(62),
+	Palmas_TO(63),
+	RioVerde_GO(64),
+	Cuiabá_MT(65),
+	Rondonópolis_MT(66),
+	CampoGrande_MS(67),
+	RioBranco_AC(68),
+	PortoVelho_RO(69),
+	Salvador_BA(71),
+	Ilhéus_BA(73),
+	Juazeiro_BA(74),
+	FeiraDeSantana_BA(75),
+	Barreiras_BA(77),
+	Acaraju_SE(79),
+	Recife_PE(81),
+	Maceió_AL(82),
+	JaoãoPessoa_PB(83),
+	Natal_RN(84),
+	Fortaleza_CE(85),
+	Teresina_PI(86),
+	Petrolina_PE(87),
+	JuazeiroDoNorte_CE(88),
+	Picos_PI(89),
+	Manaus_PA(91),
+	Manaus_AM(92),
+	Santarém_PA(93),
+	Marabá_PA(94),
+	BoaVista_RR(95),
+	Macapá_AP(96),
+	Coari_AM(97),
+	SãoLuiz_MA(98),
+	Imperatriz_MA(99);
+	
+	
+	
+	
+
+
+	DDD(int i) {
+		// TODO Auto-generated constructor stub
+	}
+	
+}

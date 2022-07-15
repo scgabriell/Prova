@@ -2,7 +2,6 @@ package br.com.contmatic.prova.empresa;
 
 import java.math.BigDecimal;
 
-//import java.util.Scanner;
 
 
 public class Produto {
@@ -17,13 +16,14 @@ public class Produto {
 	
 	private String marca;
 	
-	
+	private Integer qtdEstoque;
 
-	public Produto(String codigo) {
+	public Produto(String codigo, BigDecimal preco) {
+		
 		this.codigo = codigo;
+		this.preco = preco;
 	}
 
-	// Getters and Setters
 	
 	public String getCodigo() {
 		return codigo;
@@ -63,6 +63,34 @@ public class Produto {
 	
 	public void setMarca(String marca) {
 		this.marca = marca;
+	}
+	
+	public Integer getQtdEstoque() {
+		return qtdEstoque;
+	}
+
+	public void setQtdEstoque(Integer qtdEstoque) {
+		this.qtdEstoque = qtdEstoque;
+	}
+
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Produto [codigo=");
+		builder.append(codigo);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", cor=");
+		builder.append(cor);
+		builder.append(", preco=");
+		builder.append(preco);
+		builder.append(", marca=");
+		builder.append(marca);
+		builder.append(", qtdEstoque=");
+		builder.append(qtdEstoque);
+		builder.append("]");
+		return builder.toString();
 	}
 
 	@Override

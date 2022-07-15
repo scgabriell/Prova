@@ -1,64 +1,90 @@
 package br.com.contmatic.prova.empresa;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.Scanner;
 
 import org.junit.Test;
 
-import br.com.contmatic.prova.empresa.Empresa;
-
-
 public class EmpresaTest {
-//	private static Scanner entrada;
-//	private static List<Empresa> empresa;
-//
-//	public static void main1(String[] args) {
-//		entrada = new Scanner(System.in);
-//		int opcao;
-//		empresa = new ArrayList<Empresa>();
-//
-//		do{
-//			System.out.print("Digite 1 para cadastrar uma Empresa e  (2 para sair): ");
-//			opcao = Integer.parseInt(entrada.nextLine());
-//			switch(opcao){
-//				case 1:
-//					System.out.print("Digite o CNPJ da Empresa: ");
-//					String cnpj = entrada.nextLine();
-//					System.out.print("Digite o nome da Empresa: ");
-//					String nomeEmpresa = entrada.nextLine();
-//					System.out.print("Digite a razao social da Empresa: ");
-//					String razaoSocial = entrada.nextLine();
-//					System.out.print("Digite o endereco da empresa: ");
-//					String endereco =  entrada.nextLine();
-//					System.out.print("Digite o municipio da empresa: ");
-//					String municipio = entrada.nextLine();
-//					System.out.print("Digite o telefone da empresa: ");
-//					String telefone = entrada.nextLine();
-//
-//					Empresa.add(new Empresa(cnpj,nomeEmpresa,razaoSocial,endereco,municipio,telefone));
-//
-//					break;
-//				case 2:
-//					System.out.print("Saindo");
-//					break;
-//				default: System.out.println("Opcao invalida.");
-//				}
-//			}while(opcao!=2);
-//			
-//		}
-//
-//	public static List<Empresa> getEmpresa() {
-//		return empresa;
-//	}
-//
-//	public static void setEmpresa(List<Empresa> empresa) {
-//		EmpresaTest.empresa = empresa;
-//	}
 	
+	private final String cnpj = "98185004000196";
+	
+	private Empresa empresa;
+	
+	@BeforeClass
+	public static void setUpClass() {
+		System.out.println("Iniciando testes da classe Empresa");
+	}
+	
+	@Before
+	public void setUp() {
+		System.out.println("Executando before");
+		empresa = new Empresa("55053634000102");
+	}
+	
+	@After
+	public void tearDown() {
+		System.out.println("Executando after");
+		empresa = null;
+	}
+	
+	@AfterClass
+	public static void tearDownClass() {
+		System.out.println("Finalizando testes da classe Empresa");
+	}
+			 
 	@Test
-	public void teste1() {
-		System.out.println("Teste");
+	public void deve_inicializar_objeto_empresa_com_os_campos_obrigatorios() {
+		final String cnpj = "98185004000196";
+		empresa = new Empresa(cnpj);
+		assertEquals(cnpj, empresa.getCnpj());
+	}
+	
+	// CNPJ
+	@Test
+	public void deve_atribuir_cnpj() {
+		final String cnpj = "37175071000135";
+		empresa = new Empresa(cnpj);
+		assertEquals(cnpj, empresa.getCnpj());
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void nao_deve_atribuir_cnpj_nulo() {
+		empresa.setCnpj(null);
+	}
+	
+	// Razão Social
+	@Test(expected = IllegalArgumentException.class)
+	public void nao_deve_atribuir_razao_social_nula() {
+		empresa.setRazaoSocial(null);
+	}
+	
+	// Nome Fanstasia
+	@Test(expected = IllegalArgumentException.class)
+	public void nao_deve_atribuir_nome_fantasia_nulo() {
+		empresa.setNomeFantasia(null);
+	}
+	
+	// Endereço
+	@Test(expected = IllegalArgumentException.class)
+	public void nao_deve_atribuir_endereco_nulo() {
+		empresa.setEnderecos(null);
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void nao_deve_atribuir_lista_de_endereco_nula() {
+	//	List <Endereco>
+		
+		
 	}
 	
 }	

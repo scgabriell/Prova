@@ -1,4 +1,4 @@
-package br.com.contmatic.prova.endereco;
+package br.com.contmatic.prova.contato;
 
 public enum DDI {
 	Afeganistão(93),

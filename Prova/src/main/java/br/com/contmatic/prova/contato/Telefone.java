@@ -1,7 +1,6 @@
 package br.com.contmatic.prova.contato;
 
-import br.com.contmatic.prova.endereco.DDD;
-import br.com.contmatic.prova.endereco.DDI;
+import java.util.Objects;
 
 public class Telefone {
 
@@ -50,6 +49,38 @@ public class Telefone {
 
 	public void setTipo(TipoTelefone tipo) {
 		this.tipo = tipo;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Telefone [ddi=");
+		builder.append(ddi);
+		builder.append(", ddd=");
+		builder.append(ddd);
+		builder.append(", numero=");
+		builder.append(numero);
+		builder.append(", tipo=");
+		builder.append(tipo);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(ddd, ddi, numero, tipo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Telefone other = (Telefone) obj;
+		return ddd == other.ddd && ddi == other.ddi && Objects.equals(numero, other.numero) && tipo == other.tipo;
 	}
 	
 	

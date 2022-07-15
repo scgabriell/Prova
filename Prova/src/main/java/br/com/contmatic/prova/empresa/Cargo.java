@@ -1,5 +1,7 @@
 package br.com.contmatic.prova.empresa;
 
+import java.util.Objects;
+
 public class Cargo {
 	
 	private Integer id;
@@ -7,8 +9,6 @@ public class Cargo {
 	private String nome;
 	
 	private String descricao;
-	
-		
 
 	public Cargo(Integer id) {
 		this.id = id;
@@ -25,7 +25,6 @@ public class Cargo {
 	public String getNome() {
 		return nome;
 	}
-	
 
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -41,15 +40,20 @@ public class Cargo {
 
 	@Override
 	public String toString() {
-		return "Cargo [nome=" + nome + ", descricao=" + descricao + "]";
+		StringBuilder builder = new StringBuilder();
+		builder.append("Cargo [id=");
+		builder.append(id);
+		builder.append(", nome=");
+		builder.append(nome);
+		builder.append(", descricao=");
+		builder.append(descricao);
+		builder.append("]");
+		return builder.toString();
 	}
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
-		return result;
+		return Objects.hash(descricao, id, nome);
 	}
 
 	@Override
@@ -61,12 +65,10 @@ public class Cargo {
 		if (getClass() != obj.getClass())
 			return false;
 		Cargo other = (Cargo) obj;
-		if (nome == null) {
-			if (other.nome != null)
-				return false;
-		} else if (!nome.equals(other.nome))
-			return false;
-		return true;
-	}	
+		return Objects.equals(descricao, other.descricao) && Objects.equals(id, other.id)
+				&& Objects.equals(nome, other.nome);
+	}
+
+	
 	
 }
